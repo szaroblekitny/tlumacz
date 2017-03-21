@@ -8,12 +8,14 @@
 	</h:head>
 	<h:body>
 		<h2>Lepsze tłumaczenia</h2>
+		
 		<h:form>
 			<h:inputText id="tekstangielski" value="#{tlumaczBean.tekstAngielski}" required="true" 
 				requiredMessage="Error: Any text is required." maxlength="2500" /><br />
-			<h:commandButton id="submit" value="Tłumacz" action="response">
+			<h:commandButton id="submit" value="Tłumacz" action="#{tlumaczBean.przetlumacz}">
 			</h:commandButton>
 
 		</h:form>
+		<p>#{tlumaczBean.tekstPrzetlumaczony}</p>
 	</h:body>
 </html>

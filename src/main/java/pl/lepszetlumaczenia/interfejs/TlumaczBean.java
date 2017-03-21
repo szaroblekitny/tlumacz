@@ -44,6 +44,24 @@ public class TlumaczBean implements Serializable {
 	private String tekstAngielski;
 	private String tekstPrzetlumaczony;
 	
+	public TlumaczBean() {
+		LLG.debug("--------> TlumaczBean wzięty");
+	}
+	
+	/**
+	 * Metoda obsługowa dla przycisku tłumacz. Bierze wartość z pola tekstAngielski,
+	 * uruchamia mechanizm tłumaczący i wynik wstawia do pola tekstPrzetlumaczony.
+	 * 
+	 * @return null, bo nie ma żadnego przekierowania, wszystko dzieje się na tej samej,
+	 *         jednej jedynej stronce i to jest piękne :-)
+	 */
+	public String przetlumacz() {
+		LLG.debug("--------> przetlumacz() zaczęte");
+		tekstPrzetlumaczony = "Na razie tylko: " + tekstAngielski;
+		
+		return null;
+	}
+	
 
 	public String getTekstAngielski() {
 		return tekstAngielski;
@@ -52,7 +70,14 @@ public class TlumaczBean implements Serializable {
 	public void setTekstAngielski(String tekstAngielski) {
 		this.tekstAngielski = tekstAngielski;
 	}
-	
+
+	public String getTekstPrzetlumaczony() {
+		return tekstPrzetlumaczony;
+	}
+
+	public void setTekstPrzetlumaczony(String tekstPrzetlumaczony) {
+		this.tekstPrzetlumaczony = tekstPrzetlumaczony;
+	}
 	
 
 }
