@@ -26,6 +26,8 @@ CREATE TABLE public.rzeczowniki
 (
     kod_rzeczownika integer NOT NULL,
     temat character varying(200) COLLATE pg_catalog."default" NOT NULL,
+	grupa_deklin integer NOT NULL,
+	mianownik_lp character varying(200) COLLATE pg_catalog."default",
 	dopel_lp character varying(200) COLLATE pg_catalog."default",
 	celow_lp character varying(200) COLLATE pg_catalog."default",
 	biernik_lp character varying(200) COLLATE pg_catalog."default",
@@ -38,7 +40,8 @@ CREATE TABLE public.rzeczowniki
 	biernik_lm character varying(200) COLLATE pg_catalog."default",
 	miejsc_lm character varying(200) COLLATE pg_catalog."default",
 	narzednik_lm character varying(200) COLLATE pg_catalog."default",
-    grupa_deklin integer NOT NULL,
+	tylko_lp boolean DEFAULT FALSE,
+	tylko_lmn boolean DEFAULT FALSE,
     CONSTRAINT pk_rzeczowniki PRIMARY KEY (kod_rzeczownika)
 )
 WITH (
@@ -49,10 +52,7 @@ TABLESPACE pg_default;
 ALTER TABLE public.rzeczowniki
     OWNER to postgres;
 COMMENT ON TABLE public.rzeczowniki
-    IS 'Tabelka na polskie rzeczowniki. Na początek trzy kolumny: kod, temat i grupa deklinacyjna. Ponieważ odmiany są bardzo różne i grupy deklinacyjne są jedynie
-	pomocniczym wskaźnikiem, muszę mieć pola do trzymania wszystkich form rzeczownika,
-	choć większość z nich będzie być może nie wypełniona, jeśli grupa deklinacyjna
-	zapewni prawidłową odmianę';
+    IS 'Tabelka na polskie rzeczowniki. Główne trzy kolumny: unikalny kod, temat i grupa deklinacyjna. Ponieważ odmiany są bardzo różne i grupy deklinacyjne są jedynie pomocniczym wskaźnikiem, muszą istnieć pola do trzymania wszystkich form rzeczownika, choć większość z nich będzie nie wypełniona, jeśli grupa deklinacyjna zapewni prawidłową odmianę. Pola tylko_lp i tylko_lmn są wskaźnikami, że rzeczownik może wystąpić tylko w liczbie pojedynczej albo tylko mnogiej';
 
 -- Index: ux1_rzeczowniki
 CREATE INDEX ux1_rzeczowniki
