@@ -26,6 +26,18 @@ CREATE TABLE public.rzeczowniki
 (
     kod_rzeczownika integer NOT NULL,
     temat character varying(200) COLLATE pg_catalog."default" NOT NULL,
+	dopel_lp character varying(200) COLLATE pg_catalog."default",
+	celow_lp character varying(200) COLLATE pg_catalog."default",
+	biernik_lp character varying(200) COLLATE pg_catalog."default",
+	miejsc_lp character varying(200) COLLATE pg_catalog."default",
+	narzednik_lp character varying(200) COLLATE pg_catalog."default",
+	wolacz_lp character varying(200) COLLATE pg_catalog."default",
+	mianownik_lm character varying(200) COLLATE pg_catalog."default",
+	dopel_lm character varying(200) COLLATE pg_catalog."default",
+	celow_lm character varying(200) COLLATE pg_catalog."default",
+	biernik_lm character varying(200) COLLATE pg_catalog."default",
+	miejsc_lm character varying(200) COLLATE pg_catalog."default",
+	narzednik_lm character varying(200) COLLATE pg_catalog."default",
     grupa_deklin integer NOT NULL,
     CONSTRAINT pk_rzeczowniki PRIMARY KEY (kod_rzeczownika)
 )
@@ -37,7 +49,10 @@ TABLESPACE pg_default;
 ALTER TABLE public.rzeczowniki
     OWNER to postgres;
 COMMENT ON TABLE public.rzeczowniki
-    IS 'Tabelka na polskie rzeczowniki. Na początek trzy kolumny: kod, temat i grupa deklinacyjna. Tematów musi być kilka, bo jedne formy przechodzą w inne, np. brat -- bracia i trzeba to uwzględnić';
+    IS 'Tabelka na polskie rzeczowniki. Na początek trzy kolumny: kod, temat i grupa deklinacyjna. Ponieważ odmiany są bardzo różne i grupy deklinacyjne są jedynie
+	pomocniczym wskaźnikiem, muszę mieć pola do trzymania wszystkich form rzeczownika,
+	choć większość z nich będzie być może nie wypełniona, jeśli grupa deklinacyjna
+	zapewni prawidłową odmianę';
 
 -- Index: ux1_rzeczowniki
 CREATE INDEX ux1_rzeczowniki
