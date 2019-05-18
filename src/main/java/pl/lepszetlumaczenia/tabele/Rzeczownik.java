@@ -27,22 +27,35 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author Wojciech Zaręba
- * 
  * Klasa reprezentująca tabelkę rzeczowniki. Tu wrzucam rzeczowniki
  * bez odmiany. Za odmianę odpowiada klasa PolskiRzeczownik.
+ *
+ * @author Wojciech Zaręba
  *
  */
 @Entity
 @Table(name="rzeczowniki", schema="public")
 public class Rzeczownik {
+	/**
+	 * Identyfikator - klucz główny.
+	 */
 	@Id
 	@Column(name="kod_rzeczownika", nullable=false)
 	private int kodReczownika;
 	
+	/**
+	 * Temat rzeczownika - rdzeń, do którego przyklejane są
+	 * przedroski i przyrostki. Niestety temat może też mieć
+	 * swoje wersje, bo ą przechodzi w ę, o w ó itd.
+	 */
 	@Column(name="temat", nullable=false)
 	private String temat;
 	
+	/**
+	 * Grupa deklinacyjna. Istnieje ok. 150 grup deklinacyjnych,
+	 * po tym identyfikatorze przeprowadzane jest przetwarzanie
+	 * do ostatecznej formy rzeczownika.
+	 */
 	@Column(name="grupa_deklin", nullable=false)
 	private int grupaDeklinacyjna;
 	
