@@ -21,7 +21,8 @@
  */
 package pl.lepszetlumaczenia.config;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -38,7 +39,7 @@ import org.springframework.dao.annotation.PersistenceExceptionTranslationPostPro
 @Configuration
 @ComponentScan(basePackages={"pl.lepszetlumaczenia.logika", "pl.lepszetlumaczenia.interfejs"})
 public class Konfiguracja {
-	private static final Logger LLG = Logger.getLogger(Konfiguracja.class.getName());
+	private static final Logger LLG = LogManager.getLogger();
 	
 	@Bean
 	public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {

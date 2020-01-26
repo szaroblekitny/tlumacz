@@ -21,7 +21,8 @@
  */
 package pl.lepszetlumaczenia.config;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -44,7 +45,7 @@ import org.springframework.transaction.jta.JtaTransactionManager;
 @EnableJpaRepositories("pl.lepszetlumaczenia.repozytoria")
 @Import(Konfiguracja.class)
 public class GlownaKonfiguracja {
-	private static final Logger LLG = Logger.getLogger(GlownaKonfiguracja.class.getName());
+	private static final Logger LLG = LogManager.getLogger();
 	
 	
 	/**

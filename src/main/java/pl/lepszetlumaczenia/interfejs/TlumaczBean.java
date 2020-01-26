@@ -26,7 +26,8 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Klasa obsługi strony tlumacz.xhtml.
@@ -39,7 +40,7 @@ import org.apache.log4j.Logger;
 public class TlumaczBean implements Serializable {
 	private static final long serialVersionUID = 263621857734020784L;
 
-	private static final Logger LLG = Logger.getLogger(TlumaczBean.class.getName());
+	private static final Logger LLG = LogManager.getLogger();
 	
 	private String tekstAngielski;
 	private String tekstPrzetlumaczony;

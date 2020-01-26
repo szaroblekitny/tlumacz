@@ -21,7 +21,8 @@
  */
 package pl.lepszetlumaczenia.config;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.context.AbstractContextLoaderInitializer;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -34,7 +35,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
  *
  */
 public class KonfiguracjaWebowa extends AbstractContextLoaderInitializer {
-	private static final Logger LLG = Logger.getLogger(KonfiguracjaWebowa.class.getName());
+	private static final Logger LLG = LogManager.getLogger();
 	
 	@Override
 	protected WebApplicationContext createRootApplicationContext() {
