@@ -25,7 +25,7 @@
 		<hsqldb.version>2.3.4</hsqldb.version>
 		<postgresql.version>9.4.1212</postgresql.version>
 
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 	</properties>
 	
 	<dependencies>
