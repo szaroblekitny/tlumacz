@@ -5,7 +5,7 @@
 	
 	<groupId>pl.lepsze-tlumaczenia</groupId>
 	<artifactId>tlumacz</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 	
 	<name>Automat tłumaczeń angielsko-polskich</name>
